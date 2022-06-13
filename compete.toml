@@ -131,8 +131,8 @@ path = "./{{ contest }}"
 
 # for virtual contest
 [add]
-url = ''
-bin-name = ''
+url = 'target'
+bin-name = 'target'
 
 [test]
 # Toolchain for the test. (optional)
