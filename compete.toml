@@ -90,26 +90,26 @@ dev-dependencies = '''
 [template.new.copy-files]
 "./template-cargo-lock.toml" = "Cargo.lock"
 
-[new]
-kind = "cargo-compete"
+#[new]
+#kind = "cargo-compete"
 # Platform
 #
 # - atcoder
 # - codeforces
 # - yukicoder
-platform = "atcoder"
+#platform = "atcoder"
 # Path (Liquid template)
 #
 # Variables:
 #
 # - `contest`:      Contest ID. **May be nil**
 # - `package_name`: Package name
-path = "./{{ contest }}"
-
-#[new]
-#kind = "oj-api"
-#url = "https://atcoder.jp/contests/{{ id }}"
 #path = "./{{ contest }}"
+
+[new]
+kind = "oj-api"
+url = "https://kenkoooo.com/atcoder/#/contest/show/{{ id }}"
+path = "./{{ contest }}"
 
 # for Library-Checker
 #[add]
@@ -128,11 +128,6 @@ path = "./{{ contest }}"
 #bin-name = '{% assign segments = url | split: "/" %}{{ segments[5] }}'
 ##bin-alias = '{% assign segments = url | split: "/" %}{{ segments[5] }}' # optional
 ##bin-src-path = './src/bin/{{ bin_alias }}.rs' # optional
-
-# for virtual contest
-[add]
-url = 'target'
-bin-name = 'target'
 
 [test]
 # Toolchain for the test. (optional)
