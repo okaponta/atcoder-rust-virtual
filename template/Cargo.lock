@@ -338,51 +338,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "74490b50b9fbe561ac330df47c08f3f33073d2d00c150f719147d7c54522fa1b"
 
 [[package]]
-name = "practice"
-version = "0.1.0"
-dependencies = [
- "alga",
- "ascii",
- "bitset-fixed",
- "either",
- "fixedbitset",
- "getrandom",
- "im-rc",
- "indexmap",
- "itertools 0.9.0",
- "itertools-num",
- "lazy_static",
- "libm",
- "maplit",
- "nalgebra",
- "ndarray",
- "num",
- "num-bigint",
- "num-complex",
- "num-derive",
- "num-integer",
- "num-iter",
- "num-rational",
- "num-traits",
- "ordered-float",
- "permutohedron",
- "petgraph",
- "proconio",
- "rand",
- "rand_chacha",
- "rand_core",
- "rand_distr",
- "rand_hc",
- "rand_pcg",
- "regex",
- "rustc-hash",
- "smallvec",
- "superslice",
- "text_io",
- "whiteread",
-]
-
-[[package]]
 name = "proc-macro2"
 version = "0.4.30"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -580,6 +535,51 @@ dependencies = [
  "proc-macro2 1.0.10",
  "quote 1.0.3",
  "unicode-xid 0.2.0",
+]
+
+[[package]]
+name = "template"
+version = "0.1.0"
+dependencies = [
+ "alga",
+ "ascii",
+ "bitset-fixed",
+ "either",
+ "fixedbitset",
+ "getrandom",
+ "im-rc",
+ "indexmap",
+ "itertools 0.9.0",
+ "itertools-num",
+ "lazy_static",
+ "libm",
+ "maplit",
+ "nalgebra",
+ "ndarray",
+ "num",
+ "num-bigint",
+ "num-complex",
+ "num-derive",
+ "num-integer",
+ "num-iter",
+ "num-rational",
+ "num-traits",
+ "ordered-float",
+ "permutohedron",
+ "petgraph",
+ "proconio",
+ "rand",
+ "rand_chacha",
+ "rand_core",
+ "rand_distr",
+ "rand_hc",
+ "rand_pcg",
+ "regex",
+ "rustc-hash",
+ "smallvec",
+ "superslice",
+ "text_io",
+ "whiteread",
 ]
 
 [[package]]
