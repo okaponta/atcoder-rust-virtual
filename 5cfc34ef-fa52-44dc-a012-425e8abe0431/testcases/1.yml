@@ -1,0 +1,20 @@
+---
+type: Batch
+timelimit: 2s
+match: Exact
+
+cases:
+  - in: |
+      abaccaba
+    out: |
+      Yes
+  - in: |
+      hthth
+    out: |
+      No
+
+extend:
+  - type: Text
+    path: "./1"
+    in: /in/*.txt
+    out: /out/*.txt
