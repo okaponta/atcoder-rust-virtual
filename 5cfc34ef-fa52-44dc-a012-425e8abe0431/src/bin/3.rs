@@ -10,7 +10,7 @@ fn main() {
     }
     let mut ans = ModInt::new(2).pow(n);
     ans -= ModInt::one();
-    let comb = Comb::init(n, a.max(b), MOD);
+    let comb = CombFixed::init(n, a.max(b), MOD);
     ans -= ModInt::new(comb.get(a));
     ans -= ModInt::new(comb.get(b));
     println!("{}", ans.val);
@@ -94,37 +94,26 @@ impl std::ops::SubAssign for ModInt {
     }
 }
 
-pub struct Comb {
-    n: usize,
-    fact_inv: Vec<usize>,
-    modulo: usize,
+struct CombFixed {
+    c: Vec<usize>,
 }
 
-impl Comb {
+impl CombFixed {
     pub fn init(n: usize, k: usize, modulo: usize) -> Self {
+        let mut c = vec![0; k + 1];
+        c[0] = 1;
+        c[1] = n;
         let mut inv = vec![0; k + 1];
-        let mut fact_inv = vec![0; k + 1];
         inv[1] = 1;
-        fact_inv[0] = 1;
-        fact_inv[1] = 1;
-        for i in 2..=k {
+        for i in 2..(k + 1) {
             inv[i] = modulo - (inv[modulo % i] * (modulo / i)) % modulo;
-            fact_inv[i] = (fact_inv[i - 1] * inv[i]) % modulo;
+            c[i] = (c[i - 1] * (n - i + 1) % modulo * inv[i]) % modulo;
         }
-        Self {
-            n,
-            fact_inv,
-            modulo,
-        }
+        Self { c }
     }
 
     // nCk
     pub fn get(&self, k: usize) -> usize {
-        let mut ans = 1;
-        for i in self.n - k + 1..=self.n {
-            ans *= i;
-            ans %= MOD;
-        }
-        ans * self.fact_inv[k] % self.modulo
+        self.c[k]
     }
 }
